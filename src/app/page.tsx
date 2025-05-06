@@ -1,103 +1,148 @@
-import Image from "next/image";
+import React from 'react';
+import { Metadata } from 'next';
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: 'Privacy Policy – Lineage',
+  description:
+    'Privacy Policy for the Lineage mobile app. Learn what data we collect, how we use it, and your rights.',
+  keywords: [
+    'privacy policy',
+    'Lineage app',
+    'chat',
+    'Stream Chat',
+    'Firebase Authentication',
+    'Node.js backend',
+    'OneSignal',
+    'Expo',
+  ],
+};
+
+export default function PrivacyPolicyPage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
+    <main className="px-6 py-10 max-w-3xl mx-auto">
+      <h1 className="text-4xl font-bold mb-4">Privacy Policy</h1>
+      <p className="text-sm text-gray-600 mb-8">Last updated: July 20, 2023</p>
+
+      <section className="mb-6">
+        <h2 className="text-2xl font-semibold mb-2">1. Introduction</h2>
+        <p>
+          Welcome to Lineage. We value your privacy and strive to be transparent
+          about the data we collect, how we use it, and your rights with respect
+          to your information.
+        </p>
+      </section>
+
+      <section className="mb-6">
+        <h2 className="text-2xl font-semibold mb-2">2. Information We Collect</h2>
+        <ul className="list-disc list-inside space-y-2">
+          <li>
+            <strong>Device &amp; Usage Data:</strong> Automatically collected
+            analytics (app version, device model, OS version) via Expo.
+          </li>
+          <li>
+            <strong>Push Notification Tokens:</strong> We use OneSignal to send
+            you notifications; your device token is stored securely by OneSignal.
+          </li>
+          <li>
+            <strong>Authentication Data:</strong> If you create an account, we
+            collect only the information you provide (e.g. email).
+          </li>
+        </ul>
+      </section>
+
+      <section className="mb-6">
+        <h2 className="text-2xl font-semibold mb-2">3. How We Use Your Data</h2>
+        <p>
+          We use your information to:
+        </p>
+        <ul className="list-disc list-inside space-y-2">
+          <li>Provide and maintain app functionality.</li>
+          <li>Send you personalized push notifications (with your consent).</li>
+          <li>Analyze usage patterns to improve features and performance.</li>
+        </ul>
+      </section>
+
+      <section className="mb-6">
+        <h2 className="text-2xl font-semibold mb-2">4. Third-Party Services</h2>
+        <ul className="list-disc list-inside space-y-2">
+          <li>
+            <strong>OneSignal:</strong> Manages push notifications. Please refer
+            to{' '}
+            <a
+              href="https://onesignal.com/privacy_policy"
+              className="text-blue-600 hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              their Privacy Policy
+            </a>
             .
           </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
+          <li>
+            <strong>Firebase (FCM):</strong> Used by OneSignal on Android for
+            delivery of notifications.
           </li>
-        </ol>
+        </ul>
+      </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+      <section className="mb-6">
+        <h2 className="text-2xl font-semibold mb-2">5. Chat Functionality</h2>
+        <p>
+          We use Stream Chat to provide real-time messaging. To enable this,
+          we share your display name and, optionally, your profile picture with
+          Stream Chat. Chat messages and related metadata are processed and
+          stored by Stream Chat.
+        </p>
+      </section>
+
+      <section className="mb-6">
+        <h2 className="text-2xl font-semibold mb-2">6. Authentication &amp; Backend</h2>
+        <p>
+          We use Firebase Authentication to manage user sign-ups and sign-ins.
+          We collect the information you provide (e.g., email) and send it to
+          our custom Node.js backend. Our backend processes and stores data
+          necessary for app functionality, including user profiles,
+          notifications, and chat history.
+        </p>
+      </section>
+
+      <section className="mb-6">
+        <h2 className="text-2xl font-semibold mb-2">7. Data Security</h2>
+        <p>
+          We implement industry-standard security measures to protect your data
+          both in transit and at rest.
+        </p>
+      </section>
+
+      <section className="mb-6">
+        <h2 className="text-2xl font-semibold mb-2">8. Children's Privacy</h2>
+        <p>
+          Our app is not intended for children under 13. We do not knowingly
+          collect personally identifiable information from children under 13.
+        </p>
+      </section>
+
+      <section className="mb-6">
+        <h2 className="text-2xl font-semibold mb-2">9. Changes to This Policy</h2>
+        <p>
+          We may update this policy occasionally. When we do, we'll update the
+          "Last updated" date at the top of this page and notify you via the app.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-semibold mb-2">10. Contact Us</h2>
+        <p>
+          If you have any questions or concerns, please email us at{' '}
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:privacy@lineageapp.com"
+            className="text-blue-600 hover:underline"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            privacy@lineageapp.com
           </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          .
+        </p>
+      </section>
+    </main>
   );
 }
